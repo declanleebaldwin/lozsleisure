@@ -1,14 +1,9 @@
 const pkg = require('./package')
-const Prismic = require('prismic-javascript')
 const PrismicConfig = require('./prismic.config')
 
 module.exports = {
   mode: 'universal',
-  generate: {
-    routes: [
-      '/blog/my-first-blog'
-    ]
-  },
+
   /*
   ** Headers of the page
   */
