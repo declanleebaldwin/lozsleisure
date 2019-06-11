@@ -3,7 +3,7 @@ const PrismicConfig = require('./prismic.config')
 
 module.exports = {
   mode: 'universal',
-
+  generate: { fallback: true },
   /*
   ** Headers of the page
   */
