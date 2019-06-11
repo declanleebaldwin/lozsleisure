@@ -5,11 +5,9 @@ const PrismicConfig = require('./prismic.config')
 module.exports = {
   mode: 'universal',
   generate: {
-  routes: function () {
-      return [
-        '/blog/my-first-blog'
-      ]
-    }
+    routes: [
+      '/blog/my-first-blog'
+    ]
   },
   /*
   ** Headers of the page
