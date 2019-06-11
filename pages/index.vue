@@ -1,7 +1,6 @@
 <template>
   <section class="home">
     <article>
-      <h1>TEST</h1>
       <!-- Button to edit document in dashboard -->
       <prismic-edit-button :documentId="documentId"/>
       <div class="blog-avatar" :style="{ backgroundImage: 'url(' + image + ')' }" ></div>
