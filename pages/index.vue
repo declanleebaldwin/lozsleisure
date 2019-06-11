@@ -21,7 +21,7 @@
       </div>
       <!-- If no blog posts return message -->
       <div v-else class="blog-main">
-        <p>No Posts published at this time.</p>
+        <p>No Posts published at this time. </p>
       </div>
     </article>
   </section>
