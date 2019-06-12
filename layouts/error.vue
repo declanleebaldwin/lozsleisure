@@ -1,21 +1,22 @@
 <template>
-  <div class="outer-container">
-    <div class="back">
-      <nuxt-link to="/">back to list</nuxt-link>
-    </div>
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred</h1>
-    <nuxt-link to="/" style="text-decoration: underline;">Return to home</nuxt-link>
-  </div>
+    <section class="hero is-light is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <nuxt-link to="/">Return to home</nuxt-link>
+                <h1 class="title" v-if="error.statusCode === 404">Page not found</h1>
+                <h1 class="title" v-else>An error occurred</h1>
+            </div>
+        </div>
+    </section>
 </template>
 <script>
 export default {
-  props: ['error'],
-  layout: 'default',
-  head () {
-    return {
-      title: "Loz's Leisure",
+    props: ["error"],
+    layout: "default",
+    head() {
+        return {
+            title: "Loz's Leisure"
+        };
     }
-  },
-}
+};
 </script>

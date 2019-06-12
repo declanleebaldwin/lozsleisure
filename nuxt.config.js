@@ -34,8 +34,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '@/assets/css/resetr.css',
-    '@/assets/css/common.css'
+    'bulma',
+    '@/assets/css/main.css',
   ],
 
   /*
