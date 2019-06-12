@@ -18,15 +18,15 @@
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
+                <div class="navbar-item">
                     <nuxt-link to="/">Home</nuxt-link>
-                </a>
-                <a class="navbar-item">About</a>
-                <a class="navbar-item">
+                </div>
+                <div class="navbar-item">About</div>
+                <div class="navbar-item">
                     <nuxt-link to="/blog">Stories</nuxt-link>
-                </a>
-                <a class="navbar-item">Guides</a>
-                <a class="navbar-item">Gear</a>
+                </div>
+                <div class="navbar-item">Guides</div>
+                <div class="navbar-item">Gear</div>
             </div>
         </div>
     </nav>
