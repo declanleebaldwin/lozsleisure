@@ -1,15 +1,6 @@
 <template>
     <main>
-        <section class="hero is-fullheight bg-img">
-            <div class="hero-body">
-                <div class="container">
-                    <h1
-                        class="title has-text-grey-dark"
-                        style="opacity: 0.9"
-                    >{{ $prismic.richTextAsPlain(homepageContent.title) }}</h1>
-                </div>
-            </div>
-        </section>
+        <hero-image :title="$prismic.richTextAsPlain(homepageContent.title)" url="https://images.unsplash.com/photo-1476673160081-cf065607f449?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80"></hero-image>
         <stats></stats>
         <section class="section">
             <div class="container">
@@ -25,12 +16,14 @@ import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
 import Navbar from "~/components/Navbar.vue";
 import Stats from "~/components/Stats.vue";
+import HeroImage from "~/components/HeroImage.vue";
 
 export default {
     name: "Home",
     components: {
         Navbar,
-        Stats
+        Stats,
+        HeroImage
     },
     head() {
         return {
@@ -69,13 +62,4 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.bg-img {
-    height: 100vh;
-    background-image: url("https://images.unsplash.com/photo-1476673160081-cf065607f449?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #999;
-}
 </style>

@@ -1,0 +1,32 @@
+<template>
+    <section class="hero is-fullheight bg-img" :style="{ 'background-image': 'url(' + url + ')'}">
+        <div class="hero-body">
+            <div class="container">
+                <h1
+                    class="title has-text-grey-dark"
+                    style="opacity: 0.9"
+                >{{ title }}</h1>
+            </div>
+        </div>
+    </section>
+</template>
+
+<script>
+export default {
+    name: "HeroImage",
+    props: ['title', 'url']
+};
+</script>
+
+<style scoped>
+.bg-img {
+    height: 100vh;
+    /* background-image: url("https://images.unsplash.com/photo-1476673160081-cf065607f449?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80"); */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #999;
+}
+</style>
+
