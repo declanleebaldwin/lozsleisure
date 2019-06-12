@@ -3,8 +3,17 @@
         <section class="hero is-fullheight bg-img">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title has-text-grey-dark" style="opacity: 0.9">{{ $prismic.richTextAsPlain(homepageContent.title) }}</h1>
+                    <h1
+                        class="title has-text-grey-dark"
+                        style="opacity: 0.9"
+                    >{{ $prismic.richTextAsPlain(homepageContent.title) }}</h1>
                 </div>
+            </div>
+        </section>
+        <stats></stats>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">Where am I now?</h1>
             </div>
         </section>
         <navbar></navbar>
@@ -14,12 +23,14 @@
 <script>
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
-import Navbar from '~/components/Navbar.vue'
+import Navbar from "~/components/Navbar.vue";
+import Stats from "~/components/Stats.vue";
 
 export default {
     name: "Home",
     components: {
-      Navbar
+        Navbar,
+        Stats
     },
     head() {
         return {
