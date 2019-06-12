@@ -1,6 +1,5 @@
 <template>
     <main>
-        <navbar></navbar>
         <section class="hero">
             <div class="hero-body">
                 <div class="level">
@@ -31,6 +30,7 @@
                 <image-caption-slice :slice="slice"></image-caption-slice>
             </template>
         </section>
+        <navbar></navbar>
     </main>
 </template>
 
