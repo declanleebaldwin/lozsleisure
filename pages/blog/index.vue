@@ -1,7 +1,6 @@
 <template>
     <main>
         <!-- <prismic-edit-button :documentId="documentId"/> -->
-        <navbar></navbar>
         <section class="hero">
             <div class="hero-body">
                 <div class="level">
@@ -25,6 +24,7 @@
                 </div>
             </div>
         </section>
+        <navbar></navbar>
     </main>
 </template>
 

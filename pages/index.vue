@@ -1,13 +1,13 @@
 <template>
     <main>
         <section class="hero is-fullheight bg-img">
-            <navbar></navbar>
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title">{{ $prismic.richTextAsPlain(homepageContent.title) }}</h1>
+                    <h1 class="title has-text-grey-dark" style="opacity: 0.9">{{ $prismic.richTextAsPlain(homepageContent.title) }}</h1>
                 </div>
             </div>
         </section>
+        <navbar></navbar>
     </main>
 </template>
 
