@@ -28,5 +28,14 @@ export default {
     background-size: cover;
     background-color: #999;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.title {
+    max-width: 75%;
+}
 </style>
 

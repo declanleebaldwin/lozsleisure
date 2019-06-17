@@ -1,5 +1,8 @@
 <template>
     <section>
+        <div class="logo-container">
+            <img src="~/assets/img/lozsleisurelogo.svg" alt="">
+        </div>
         <div class="button_container" id="toggle">
             <span class="top"></span>
             <span class="middle"></span>
@@ -53,6 +56,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.logo-container {
+    position: fixed;
+    top: 3%;
+    width: 100px;
+    z-index:100;
+}
 .button_container {
     position: fixed;
     top: 5%;
