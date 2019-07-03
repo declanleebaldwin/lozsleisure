@@ -5,6 +5,7 @@
         <section class="section">
             <div class="container">
                 <h1 class="title">Where am I now?</h1>
+                <div id="regions_div" style="width: 100%;"></div>
             </div>
         </section>
         <navbar></navbar>
@@ -27,8 +28,27 @@ export default {
     },
     head() {
         return {
-            title: "Loz's Leisure"
+            title: "Loz's Leisure",
+            script: [
+                { src: 'https://www.gstatic.com/charts/loader.js' }
+            ]
         };
+    },
+    mounted() {
+      google.charts.load('current', {
+        'packages':['geochart'],
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country'],
+          ['United Kingdom']
+        ]);
+        var options = {};
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+        chart.draw(data, options);
+      }
     },
     async asyncData({ context, error, req }) {
         try {
