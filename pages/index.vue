@@ -40,10 +40,11 @@ export default {
         'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
       });
       google.charts.setOnLoadCallback(drawRegionsMap);
+        let $this = this;
       function drawRegionsMap() {
         var data = google.visualization.arrayToDataTable([
           ['Country'],
-          ['United Kingdom']
+          [$this.homepageContent.country]
         ]);
         var options = {};
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
