@@ -5,7 +5,7 @@
         <section class="section">
             <div class="container">
                 <h1 class="title">Where am I now?</h1>
-                <div id="regions_div" style="width: 100%;"></div>
+                <div id="regions_div" class="lazyload" style="width: 100%;"></div>
                 <div class="column">
                     <div class="column">
                         <div class="card">
@@ -28,6 +28,7 @@ import PrismicConfig from "~/prismic.config.js";
 import Navbar from "~/components/Navbar.vue";
 import Stats from "~/components/Stats.vue";
 import HeroImage from "~/components/HeroImage.vue";
+import 'lazysizes';
 
 export default {
     name: "Home",
