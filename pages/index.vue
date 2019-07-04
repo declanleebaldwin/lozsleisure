@@ -6,6 +6,16 @@
             <div class="container">
                 <h1 class="title">Where am I now?</h1>
                 <div id="regions_div" style="width: 100%;"></div>
+                <div class="column">
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-size-6-mobile">{{ homepageContent.country }}</p>
+                                <p class="subtitle is-size-6-mobile">{{ homepageContent.city }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <navbar></navbar>
@@ -40,7 +50,7 @@ export default {
         'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
       });
       google.charts.setOnLoadCallback(drawRegionsMap);
-        let $this = this;
+      let $this = this;
       function drawRegionsMap() {
         var data = google.visualization.arrayToDataTable([
           ['Country'],
