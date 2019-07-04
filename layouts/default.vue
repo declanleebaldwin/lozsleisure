@@ -14,19 +14,11 @@ export default {
     },
     head() {
         return {
-            title: "Loz's Leisure"
+            title: "Loz's Leisure",
+            script: [
+              { src: "https://www.gstatic.com/charts/loader.js", defer: true }
+            ]
         };
     },
-    mounted() {
-        if (!process.server && !window.google) {
-            console.log("google charts not loaded");
-            const script = document.createElement("script");
-            script.onload = this.onScriptLoaded;
-            script.type = "text/javascript";
-            script.src = "https://www.gstatic.com/charts/loader.js";
-            document.head.appendChild(script);
-        }
-        console.log("google charts loaded");
-    }
 };
 </script>
