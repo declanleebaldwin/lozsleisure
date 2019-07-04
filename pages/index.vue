@@ -1,6 +1,6 @@
 <template>
     <main>
-        <hero-image :title="$prismic.richTextAsPlain(homepageContent.title)" url="https://images.unsplash.com/photo-1476673160081-cf065607f449?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80"></hero-image>
+        <hero-image :title="$prismic.richTextAsPlain(homepageContent.title)" :url="homepageContent['hero-image']['url']"></hero-image>
         <stats></stats>
         <section class="section">
             <div class="container">
@@ -81,9 +81,6 @@ export default {
             // Returns data to be used in template
             return {
                 homepageContent
-                // documentId: document.id,
-                // posts: blogPosts.results,
-                // image: homepageContent.image.url
             };
         } catch (e) {
             // Returns error page

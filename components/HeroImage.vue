@@ -21,7 +21,6 @@ export default {
 <style scoped>
 .bg-img {
     height: 100vh;
-    /* background-image: url("https://images.unsplash.com/photo-1476673160081-cf065607f449?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80"); */
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
