@@ -2,10 +2,7 @@
     <section class="hero is-fullheight bg-img" :style="{ 'background-image': 'url(' + url + ')'}">
         <div class="hero-body">
             <div class="container">
-                <h1
-                    class="title has-text-grey-dark"
-                    style="opacity: 0.9"
-                >{{ title }}</h1>
+                <slot></slot>
             </div>
         </div>
     </section>
@@ -35,6 +32,8 @@ export default {
 }
 .title {
     max-width: 75%;
+    color: white;
+    font-size: 4rem;
 }
 </style>
 

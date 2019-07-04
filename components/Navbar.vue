@@ -33,7 +33,7 @@
                     </li>
                     <li>
                         <div>
-                            <nuxt-link to="/">Gear</nuxt-link>
+                            <nuxt-link to="/gear">Gear</nuxt-link>
                         </div>
                     </li>
                 </ul>

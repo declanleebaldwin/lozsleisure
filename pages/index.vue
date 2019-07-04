@@ -1,6 +1,11 @@
 <template>
     <main>
-        <hero-image :title="$prismic.richTextAsPlain(homepageContent.title)" :url="homepageContent['hero-image']['url']"></hero-image>
+        <hero-image :url="homepageContent['hero-image']['url']">
+            <h1
+                class="subtitle is-2 has-text-grey-dark"
+                style="opacity: 0.9"
+            >{{ $prismic.richTextAsPlain(homepageContent.title) }}</h1>
+        </hero-image>
         <stats></stats>
         <section class="section">
             <div class="container">
@@ -28,7 +33,7 @@ import PrismicConfig from "~/prismic.config.js";
 import Navbar from "~/components/Navbar.vue";
 import Stats from "~/components/Stats.vue";
 import HeroImage from "~/components/HeroImage.vue";
-import 'lazysizes';
+import "lazysizes";
 
 export default {
     name: "Home",
@@ -40,27 +45,26 @@ export default {
     head() {
         return {
             title: "Loz's Leisure",
-            script: [
-                { src: 'https://www.gstatic.com/charts/loader.js' }
-            ]
         };
     },
     mounted() {
-      google.charts.load('current', {
-        'packages':['geochart'],
-        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-      });
-      google.charts.setOnLoadCallback(drawRegionsMap);
-      let $this = this;
-      function drawRegionsMap() {
-        var data = google.visualization.arrayToDataTable([
-          ['Country'],
-          [$this.homepageContent.country]
-        ]);
-        var options = {};
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-        chart.draw(data, options);
-      }
+        google.charts.load("current", {
+            packages: ["geochart"],
+            mapsApiKey: "AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY"
+        });
+        google.charts.setOnLoadCallback(drawRegionsMap);
+        let $this = this;
+        function drawRegionsMap() {
+            var data = google.visualization.arrayToDataTable([
+                ["Country"],
+                [$this.homepageContent.country]
+            ]);
+            var options = {};
+            var chart = new google.visualization.GeoChart(
+                document.getElementById("regions_div")
+            );
+            chart.draw(data, options);
+        }
     },
     async asyncData({ context, error, req }) {
         try {
