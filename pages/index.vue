@@ -6,12 +6,15 @@
                 style="opacity: 0.9"
             >{{ $prismic.richTextAsPlain(homepageContent.title) }}</h1>
         </hero-image>
-        <stats :countries="homepageContent['number_of_countries']" :videos="homepageContent['number_of_videos']"></stats>
+        <stats
+            :countries="homepageContent['number_of_countries']"
+            :videos="homepageContent['number_of_videos']"
+        ></stats>
         <section class="section">
             <div class="container">
                 <h1 class="title section-heading">Where am I now?</h1>
                 <div id="regions_div" class="lazyload" style="width: 100%;"></div>
-                <div class="column">
+                <div class="columns">
                     <div class="column">
                         <div class="card">
                             <div class="card-content">
@@ -21,11 +24,70 @@
                         </div>
                     </div>
                 </div>
-                <div class="column">
+                <div class="columns">
                     <div class="column">
                         <div class="card">
                             <div class="card-content">
-                                <p class="subtitle is-size-6-mobile"><prismic-rich-text :field="homepageContent['location_description']"/></p>
+                                <p class="subtitle is-size-6-mobile">
+                                    <prismic-rich-text
+                                        :field="homepageContent['location_description']"
+                                    />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <h1 class="title section-heading">My Favourites</h1>
+                <div class="columns">
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="https://bulma.io/images/placeholders/1280x960.png"
+                                        alt="Placeholder image"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title is-4">Philippines</p>
+                                <p class="subtitle is-6">My first time travelling the Philippines!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="https://bulma.io/images/placeholders/1280x960.png"
+                                        alt="Placeholder image"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title is-4">London</p>
+                                <p class="subtitle is-6">Back in London for summer!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="https://bulma.io/images/placeholders/1280x960.png"
+                                        alt="Placeholder image"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title is-4">Italy</p>
+                                <p class="subtitle is-6">Staying in huge villa in the countryside!</p>
                             </div>
                         </div>
                     </div>
@@ -53,7 +115,7 @@ export default {
     },
     head() {
         return {
-            title: "Loz's Leisure",
+            title: "Loz's Leisure"
         };
     },
     mounted() {
@@ -104,5 +166,4 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
 </style>
