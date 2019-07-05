@@ -40,3 +40,9 @@
 	opacity: 1;
 	transition: opacity 300ms;
 }
+
+.section-heading {
+  display: inline-block;
+  border-bottom: 4px solid #5ac3ff;
+  border-radius: 4px;
+}

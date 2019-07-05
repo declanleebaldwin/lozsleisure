@@ -184,7 +184,7 @@ export default {
     width: 0%;
     transform: translateX(-50%);
     height: 3px;
-    background: #fff;
+    background: #5ac3ff;
     transition: 0.2s;
 }
 

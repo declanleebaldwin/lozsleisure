@@ -9,7 +9,7 @@
         <stats :countries="homepageContent['number_of_countries']" :videos="homepageContent['number_of_videos']"></stats>
         <section class="section">
             <div class="container">
-                <h1 class="title">Where am I now?</h1>
+                <h1 class="title section-heading">Where am I now?</h1>
                 <div id="regions_div" class="lazyload" style="width: 100%;"></div>
                 <div class="column">
                     <div class="column">
@@ -17,6 +17,15 @@
                             <div class="card-content">
                                 <p class="title is-size-6-mobile">{{ homepageContent.country }}</p>
                                 <p class="subtitle is-size-6-mobile">{{ homepageContent.city }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="subtitle is-size-6-mobile"><prismic-rich-text :field="homepageContent['location_description']"/></p>
                             </div>
                         </div>
                     </div>
@@ -95,4 +104,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 </style>
