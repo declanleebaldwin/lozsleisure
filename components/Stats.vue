@@ -4,10 +4,10 @@
             <div class="column is-half is-offset-one-quarter">
                 <div class="columns">
                     <div class="column">
-                        <h1 class="title">45 Countries</h1>
+                        <h1 class="title">{{ countries }} Countries</h1>
                     </div>
                     <div class="column">
-                        <h1 class="title">150 Videos</h1>
+                        <h1 class="title">{{ videos }} Videos</h1>
                     </div>
                 </div>
             </div>
@@ -18,6 +18,7 @@
 <script>
 export default {
     name: "Stats",
+    props: ['countries', 'videos']
 };
 </script>
 

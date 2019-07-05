@@ -6,7 +6,7 @@
                 style="opacity: 0.9"
             >{{ $prismic.richTextAsPlain(homepageContent.title) }}</h1>
         </hero-image>
-        <stats></stats>
+        <stats :countries="homepageContent['number_of_countries']" :videos="homepageContent['number_of_videos']"></stats>
         <section class="section">
             <div class="container">
                 <h1 class="title">Where am I now?</h1>
