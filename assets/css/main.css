@@ -46,3 +46,8 @@
   border-bottom: 4px solid #5ac3ff;
   border-radius: 4px;
 }
+
+.card:hover {
+  transition: box-shadow .2s ease-out;
+  box-shadow: 0 18px 35px 0 rgba(63,63,122,.1),0 5px 15px 0 rgba(58,50,140,.07);
+}

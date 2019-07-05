@@ -44,6 +44,7 @@ module.exports = {
   plugins: [
     '~/plugins/link-resolver.js',
     '~/plugins/prismic-vue.js',
+    '~/plugins/html-serializer.js',
   ],
 
   /*
