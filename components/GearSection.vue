@@ -11,7 +11,7 @@
           <div class="column">
             <div class="columns">
               <div class="column">
-                <a href="http://amzn.to/2hB41Kn" class="link-container" target="_blank">
+                <a :href="gear.data['gear_link']['url']" class="link-container" target="_blank">
                   <div class="card">
                     <div class="card-content">
                       <div class="columns">
