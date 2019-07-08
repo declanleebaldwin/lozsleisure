@@ -1,7 +1,9 @@
 <template>
     <section>
         <div class="logo-container">
-            <img src="~/assets/img/lozsleisurelogo.svg" alt="">
+            <nuxt-link to="/">
+                <img src="~/assets/img/lozsleisurelogo.svg" alt="">
+            </nuxt-link>
         </div>
         <div class="button_container" id="toggle">
             <span class="top"></span>
