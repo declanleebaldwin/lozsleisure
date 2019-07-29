@@ -3,7 +3,6 @@
     <hero-image :url="storiespageContent['hero_image']['url']">
       <h1 class="title has-text-grey-dark" style="opacity: 0.9">{{ $prismic.richTextAsPlain(storiespageContent.title) }}</h1>
     </hero-image>
-    <!-- <prismic-edit-button :documentId="documentId"/> -->
     <section class="section">
       <div class="tile is-ancestor">
         <div v-for="post in posts" :key="post.id" v-bind:post="post" class="tile is-parent">
