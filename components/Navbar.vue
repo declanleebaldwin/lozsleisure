@@ -30,11 +30,6 @@
                     </li>
                     <li>
                         <div>
-                            <nuxt-link to="/">Guides</nuxt-link>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
                             <nuxt-link to="/gear">Gear</nuxt-link>
                         </div>
                     </li>
