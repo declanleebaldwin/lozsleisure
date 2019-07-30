@@ -54,7 +54,7 @@ export default {
 
 <style lang="css" scoped>
 .logo-container {
-    position: fixed;
+    position: absolute;
     top: 3%;
     width: 100px;
     z-index:100;

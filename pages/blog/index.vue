@@ -1,7 +1,7 @@
 <template>
   <main>
     <hero-image :url="storiespageContent['hero_image']['url']">
-      <h1 class="title has-text-grey-dark" style="opacity: 0.9">{{ $prismic.richTextAsPlain(storiespageContent.title) }}</h1>
+      <h1 class="title has-text-white" style="opacity: 0.9">{{ $prismic.richTextAsPlain(storiespageContent.title) }}</h1>
     </hero-image>
     <section class="section">
       <div class="tile is-ancestor">
