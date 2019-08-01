@@ -41,51 +41,12 @@
       <div class="container">
         <h1 class="title section-heading">My Favourites</h1>
         <div class="columns">
-          <div class="column">
-            <a :href="favouritesArray[0].data['favourite_link']['url']" target="_blank">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3 lazyload">
-                  <img :src="favouritesArray[0].data['favourite_image']['url']" />
-                </figure>
-              </div>
-              <div class="card-content">
-                <p class="title is-4">{{ favouritesArray[0].data['favourite_title'][0]['text'] }}</p>
-                <p class="subtitle is-6">{{ favouritesArray[0].data['favourite_subtitle'][0]['text'] }}</p>
-              </div>
-            </div>
-            </a>
-          </div>
-          <div class="column">
-            <a :href="favouritesArray[1].data['favourite_link']['url']" target="_blank">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3 lazyload">
-                  <img :src="favouritesArray[1].data['favourite_image']['url']" />
-                </figure>
-              </div>
-              <div class="card-content">
-                <p class="title is-4">{{ favouritesArray[1].data['favourite_title'][0]['text'] }}</p>
-                <p class="subtitle is-6">{{ favouritesArray[1].data['favourite_subtitle'][0]['text'] }}</p>
-              </div>
-            </div>
-            </a>
-          </div>
-          <div class="column">
-            <a :href="favouritesArray[2].data['favourite_link']['url']" target="_blank">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3 lazyload">
-                  <img :src="favouritesArray[2].data['favourite_image']['url']" />
-                </figure>
-              </div>
-              <div class="card-content">
-                <p class="title is-4">{{ favouritesArray[2].data['favourite_title'][0]['text'] }}</p>
-                <p class="subtitle is-6">{{ favouritesArray[2].data['favourite_subtitle'][0]['text'] }}</p>
-              </div>
-            </div>
-            </a>
-          </div>
+          <favourite-card
+            v-for="(favourite, index) in favouritesArray"
+            v-bind:favourite="favourite"
+            v-bind:index="index"
+            v-bind:key="favourite.id"
+          ></favourite-card>
         </div>
       </div>
     </section>
@@ -99,6 +60,7 @@ import PrismicConfig from "~/prismic.config.js";
 import Navbar from "~/components/Navbar.vue";
 import Stats from "~/components/Stats.vue";
 import HeroImage from "~/components/HeroImage.vue";
+import FavouriteCard from "~/components/FavouriteCard.vue";
 import "lazysizes";
 
 export default {
@@ -106,7 +68,8 @@ export default {
   components: {
     Navbar,
     Stats,
-    HeroImage
+    HeroImage,
+    FavouriteCard
   },
   head() {
     return {
