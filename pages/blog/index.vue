@@ -50,14 +50,19 @@ export default {
         { orderings: "[my.post.date desc]" }
       );
 
+      const postCategories = await api.query(
+        Prismic.Predicates.at("document.type", "tag"), 
+        { orderings: "[my.tag.post_category]"}
+      );
+
       // Load the edit button
       if (process.client) window.prismic.setupEditButton();
 
       // Returns data to be used in template
       return {
         storiespageContent,
-        // documentId: document.id,
-        posts: blogPosts.results
+        posts: blogPosts.results,
+        postCategories
       };
     } catch (e) {
       // Returns error page
