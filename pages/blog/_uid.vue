@@ -3,13 +3,6 @@
         <section class="hero">
             <div class="hero-body">
                 <div class="level">
-                    <div class="level-left">
-                        <div class="level-item">
-                            <nuxt-link to="/blog">back to list</nuxt-link>
-                        </div>
-                    </div>
-                </div>
-                <div class="level">
                     <div class="level-item">
                         <div>
                             <span class="is-size-7 has-text-grey-light">{{ formattedDate }}</span>

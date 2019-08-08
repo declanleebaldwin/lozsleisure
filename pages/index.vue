@@ -12,6 +12,22 @@
     ></stats>
     <section class="section">
       <div class="container">
+        <h1 class="title section-heading">Start Here 👇</h1>
+        <div style="width: 80%; margin: auto;">
+        <div class="video-container">
+          <iframe
+            class="lazyload"
+            src="https://www.youtube.com/embed/Oeyqmqfk5I0"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
         <h1 class="title section-heading">Where am I now?</h1>
         <div id="regions_div" class="lazyload" style="width: 100%;"></div>
         <div class="columns">
@@ -129,4 +145,25 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.section {
+  border-bottom: 2px solid #363636;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 </style>
