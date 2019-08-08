@@ -23,10 +23,22 @@
         </div>
       </div>
     </section>
-    <section class="section">
+    <!-- <section class="section">
       <div class="tile is-ancestor">
         <div v-for="post in filteredPosts" :key="post.id" v-bind:post="post" class="tile is-parent">
           <blog-widget :post="post"></blog-widget>
+        </div>
+      </div>
+    </section> -->
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <blog-widget
+            v-for="(post, index) in filteredPosts"
+            v-bind:post="post"
+            v-bind:index="index"
+            v-bind:key="post.id"
+          ></blog-widget>
         </div>
       </div>
     </section>
