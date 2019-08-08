@@ -15,9 +15,9 @@
       <div class="columns">
         <div class="column has-text-centered">
           <div class="select">
-            <select>
+            <select v-model="postCategorySelected">
               <option value="Anywhere">Anywhere</option>
-              <option v-for="category in postCategories" :value="category.data.post_category" :key="category.id">{{ category.data.post_category }}</option>
+              <option v-for="category in postCategories" :value="category.slugs[0]" :key="category.id">{{ category.data.post_category }}</option>
             </select>
           </div>
         </div>
@@ -25,7 +25,7 @@
     </section>
     <section class="section">
       <div class="tile is-ancestor">
-        <div v-for="post in posts" :key="post.id" v-bind:post="post" class="tile is-parent">
+        <div v-for="post in filteredPosts" :key="post.id" v-bind:post="post" class="tile is-parent">
           <blog-widget :post="post"></blog-widget>
         </div>
       </div>
@@ -55,8 +55,21 @@ export default {
   },
   data() {
     return {
-      isActive: false
+      postCategorySelected: 'Anywhere',
     };
+  },
+  computed: {
+    filteredPosts: function() {
+      let $this = this;
+      return this.posts.filter((post) => {
+        if($this.postCategorySelected == 'Anywhere') {
+          return true;
+        }
+        if($this.postCategorySelected == post.data.post_category.slug) {
+          return true;
+        }
+      })
+    }
   },
   async asyncData({ context, error, req }) {
     try {
