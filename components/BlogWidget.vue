@@ -1,5 +1,5 @@
 <template>
-  <div class="column">
+  <div class="column is-one-third">
     <nuxt-link :to="link">
       <div class="card">
         <div class="card-image">
@@ -18,6 +18,7 @@
 
 <script>
 import LinkResolver from "~/plugins/link-resolver.js";
+import "lazysizes";
 
 export default {
   props: ["post"],

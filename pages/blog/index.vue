@@ -23,16 +23,9 @@
         </div>
       </div>
     </section>
-    <!-- <section class="section">
-      <div class="tile is-ancestor">
-        <div v-for="post in filteredPosts" :key="post.id" v-bind:post="post" class="tile is-parent">
-          <blog-widget :post="post"></blog-widget>
-        </div>
-      </div>
-    </section> -->
     <section class="section">
       <div class="container">
-        <div class="columns">
+        <div class="columns is-multiline">
           <blog-widget
             v-for="(post, index) in filteredPosts"
             v-bind:post="post"

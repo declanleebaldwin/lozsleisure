@@ -40,7 +40,7 @@
     <section class="section">
       <div class="container">
         <h1 class="title section-heading">My Favourites</h1>
-        <div class="columns">
+        <div class="columns is-multiline">
           <favourite-card
             v-for="(favourite, index) in favouritesArray"
             v-bind:favourite="favourite"

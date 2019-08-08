@@ -1,5 +1,5 @@
 <template>
-  <div class="column">
+  <div class="column is-one-third">
     <a :href="favourite.data['favourite_link']['url']" target="_blank">
       <div class="card">
         <div class="card-image">
