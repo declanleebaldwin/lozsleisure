@@ -1,8 +1,28 @@
 <template>
   <main>
     <hero-image :url="storiespageContent['hero_image']['url']">
-      <h1 class="title has-text-white" style="opacity: 0.9">{{ $prismic.richTextAsPlain(storiespageContent.title) }}</h1>
+      <h1
+        class="title has-text-white"
+        style="opacity: 0.9"
+      >{{ $prismic.richTextAsPlain(storiespageContent.title) }}</h1>
     </hero-image>
+    <section class="section">
+      <div class="columns">
+        <div class="column has-text-centered">
+          <span class="is-size-4">Where would you like to travel?</span>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <div class="select">
+            <select>
+              <option value="Anywhere">Anywhere</option>
+              <option v-for="category in postCategories" :value="category.data.post_category" :key="category.id">{{ category.data.post_category }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="section">
       <div class="tile is-ancestor">
         <div v-for="post in posts" :key="post.id" v-bind:post="post" class="tile is-parent">
@@ -33,6 +53,11 @@ export default {
       title: "Loz's Leisure"
     };
   },
+  data() {
+    return {
+      isActive: false
+    };
+  },
   async asyncData({ context, error, req }) {
     try {
       // Query to get API object
@@ -51,8 +76,8 @@ export default {
       );
 
       const postCategories = await api.query(
-        Prismic.Predicates.at("document.type", "tag"), 
-        { orderings: "[my.tag.post_category]"}
+        Prismic.Predicates.at("document.type", "tag"),
+        { orderings: "[my.tag.post_category]" }
       );
 
       // Load the edit button
@@ -62,7 +87,7 @@ export default {
       return {
         storiespageContent,
         posts: blogPosts.results,
-        postCategories
+        postCategories: postCategories.results
       };
     } catch (e) {
       // Returns error page
