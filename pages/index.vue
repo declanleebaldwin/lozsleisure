@@ -10,22 +10,7 @@
       :countries="homepageContent['number_of_countries']"
       :videos="homepageContent['number_of_videos']"
     ></stats>
-    <section class="section">
-      <div class="container">
-        <h1 class="title section-heading">Start Here 👇</h1>
-        <div style="width: 80%; margin: auto;">
-        <div class="video-container">
-          <iframe
-            class="lazyload"
-            :src="homepageContent['video_embed_link']"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        </div>
-      </div>
-    </section>
+    <embedded-video :src="homepageContent['video_embed_link']"></embedded-video>
     <section class="section">
       <div class="container">
         <h1 class="title section-heading">Where am I now?</h1>
@@ -77,6 +62,7 @@ import Navbar from "~/components/Navbar.vue";
 import Stats from "~/components/Stats.vue";
 import HeroImage from "~/components/HeroImage.vue";
 import FavouriteCard from "~/components/FavouriteCard.vue";
+import EmbeddedVideo from "~/components/EmbeddedVideo.vue";
 import "lazysizes";
 
 export default {
@@ -85,7 +71,8 @@ export default {
     Navbar,
     Stats,
     HeroImage,
-    FavouriteCard
+    FavouriteCard,
+    EmbeddedVideo
   },
   head() {
     return {
@@ -147,23 +134,5 @@ export default {
 <style lang="css" scoped>
 .section {
   border-bottom: 2px solid #363636;
-}
-
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
-}
-
-.video-container iframe,
-.video-container object,
-.video-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 </style>
