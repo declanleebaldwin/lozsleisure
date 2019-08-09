@@ -17,7 +17,7 @@
         <div class="video-container">
           <iframe
             class="lazyload"
-            src="https://www.youtube.com/embed/Oeyqmqfk5I0"
+            :src="homepageContent['video_embed_link']"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
