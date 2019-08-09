@@ -14,8 +14,8 @@
     </section>
     <section v-for="(slice, index) in slices" :key="'slice-' + index" class="section">
       <div class="container">
-        <div class="columns is-mobile is-centered">
-          <div class="column is-mobile is-two-thirds">
+        <div class="columns is-centered">
+          <div class="column is-two-thirds">
             <template v-if="slice.slice_type === 'text'">
               <text-slice :slice="slice"></text-slice>
             </template>
