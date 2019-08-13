@@ -86,3 +86,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.level {
+  margin-top: 1.5rem;
+}
+</style>
