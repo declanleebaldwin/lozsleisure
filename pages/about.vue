@@ -20,6 +20,51 @@
     <section class="section">
       <div class="container">
         <h1 class="title section-heading">Get In Touch</h1>
+        <div class="columns">
+          <div class="column is-one-third">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input
+                  ref="name"
+                  v-model="name"
+                  class="input"
+                  type="text"
+                  placeholder="e.g Alex Smith"
+                />
+              </div>
+              <p v-show="errors.name" class="help is-danger">Please enter your name</p>
+            </div>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input
+                  ref="email"
+                  v-model="email"
+                  class="input"
+                  type="email"
+                  placeholder="e.g. alexsmith@gmail.com"
+                />
+              </div>
+              <p v-show="errors.email" class="help is-danger">Please enter your email</p>
+            </div>
+            <div class="field">
+              <label class="label">Message</label>
+              <div class="control">
+                <textarea ref="message" v-model="message" class="textarea" placeholder="Textarea"></textarea>
+              </div>
+              <p v-show="errors.message" class="help is-danger">Please enter your message</p>
+            </div>
+            <div class="field">
+              <div class="control">
+                <button @click="trySubmitForm"
+                  ref="submitButton"
+                  class="button is-link"
+                >Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <navbar></navbar>
@@ -41,6 +86,94 @@ export default {
     return {
       title: "Loz's Leisure"
     };
+  },
+  data() {
+    return {
+      isMounted: true,
+      name: "",
+      email: "",
+      message: "",
+      errors: {
+        name: false,
+        email: false,
+        message: false
+      }
+    };
+  },
+  methods: {
+    trySubmitForm() {
+      if(this.$refs.name.value == '') {
+        this.errors.name = true;
+      } else {
+        this.errors.name = false;
+      }
+
+      if(this.$refs.email.value == '') {
+        this.errors.email = true;
+      } else {
+        this.errors.email = false;
+      }
+
+      if(this.$refs.message.value == '') {
+        this.errors.message = true;
+      } else {
+        this.errors.message = false;
+      }
+
+      if(!this.errors.name && !this.errors.email & !this.errors.message) {
+        alert("oops this doesn't do anything yet");
+      }
+    },
+    addFormValidation() {
+      let $this = this;
+      this.$refs.name.onblur = function() {
+        if (this.value == "") {
+          $this.errors.name = true;
+        } else {
+          $this.errors.name = false;
+        }
+      };
+      this.$refs.name.oninput = function() {
+        if (this.value == "") {
+          $this.errors.name = true;
+        } else {
+          $this.errors.name = false;
+        }
+      };
+
+      this.$refs.email.onblur = function() {
+        if (this.value == "") {
+          $this.errors.email = true;
+        } else {
+          $this.errors.email = false;
+        }
+      };
+      this.$refs.email.oninput = function() {
+        if (this.value == "") {
+          $this.errors.email = true;
+        } else {
+          $this.errors.email = false;
+        }
+      };
+
+      this.$refs.message.onblur = function() {
+        if (this.value == "") {
+          $this.errors.message = true;
+        } else {
+          $this.errors.message = false;
+        }
+      };
+      this.$refs.message.oninput = function() {
+        if (this.value == "") {
+          $this.errors.message = true;
+        } else {
+          $this.errors.message = false;
+        }
+      };
+    }
+  },
+  mounted() {
+    this.addFormValidation();
   },
   async asyncData({ context, error, req }) {
     try {
