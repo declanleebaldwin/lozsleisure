@@ -1,18 +1,25 @@
 <template>
   <main>
-    <section class="section">
+    <section class="section profile-container">
       <div class="columns">
         <div class="column">
           <div class="image-container is-mobile">
             <figure class="image is-square">
-              <img :src="aboutpageContent['profile_image']['url']" />
+              <img class="lazyload" :src="aboutpageContent['profile_image']['url']" />
             </figure>
           </div>
         </div>
         <div class="column">
-          <h1 class="title section-heading">{{ $prismic.richTextAsPlain(aboutpageContent.title) }}</h1>
-          <prismic-rich-text :field="aboutpageContent['profile_text']" />
+          <div class="container">
+            <h1 class="title section-heading">{{ $prismic.richTextAsPlain(aboutpageContent.title) }}</h1>
+            <prismic-rich-text :field="aboutpageContent['profile_text']" />
+          </div>
         </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h1 class="title section-heading">Get In Touch</h1>
       </div>
     </section>
     <navbar></navbar>
@@ -62,8 +69,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.section {
+.profile-container {
   margin-top: 3rem;
+}
+
+.section {
+  border-bottom: 2px solid #363636;
 }
 
 @media only screen and (min-width: 770px) {
