@@ -1,6 +1,6 @@
 <template>
   <main>
-    <hero-image :url="gearpageContent['hero-image']['url']">
+    <hero-image :url="gearpageContent['hero-image']['url']" :mobileurl="gearpageContent['hero-image']['mobile']['url']">
       <h1 class="title" style="opacity: 0.9">{{ $prismic.richTextAsPlain(gearpageContent.title) }}</h1>
     </hero-image>
     <gear-section

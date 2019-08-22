@@ -1,6 +1,6 @@
 <template>
   <main>
-    <hero-image :url="storiespageContent['hero_image']['url']">
+    <hero-image :url="storiespageContent['hero_image']['url']" :mobileurl="storiespageContent['hero_image']['mobile']['url']">
       <h1
         class="title has-text-white"
         style="opacity: 0.9"

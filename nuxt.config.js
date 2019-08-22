@@ -51,6 +51,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['@nuxtjs/axios', { baseURL: '/api/contact' }],
   ],
 
   /*
@@ -63,5 +64,8 @@ module.exports = {
     extend(config, ctx) {
       config.resolve.alias['vue'] = 'vue/dist/vue.common'
     }
-  }
+  },
+  serverMiddleware: [
+    '~/api/contact'
+  ],
 }

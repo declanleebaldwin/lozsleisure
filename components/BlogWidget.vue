@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-image">
           <figure class="image is-4by3 lazyload">
-            <img :src="post.data['post_image']['url']" />
+            <img :src="responsiveURL" />
           </figure>
         </div>
         <div class="card-content">
@@ -21,14 +21,31 @@ import LinkResolver from "~/plugins/link-resolver.js";
 import "lazysizes";
 
 export default {
+  name: "blog-widget",
   props: ["post"],
   data: function() {
     return {
       link: "",
-      formattedDate: ""
+      formattedDate: "",
+      windowWidth: 0
     };
   },
-  name: "blog-widget",
+  mounted() {
+    if (!process.client) return;
+    this.windowWidth = window.innerWidth;
+    window.addEventListener("resize", () => {
+      this.windowWidth = window.innerWidth;
+    });
+  },
+  computed: {
+    responsiveURL() {
+      if (this.windowWidth <= 768 && this.post.data["post_image"]["mobile"]) {
+        return this.post.data["post_image"]["mobile"]["url"];
+      } else {
+        return this.post.data["post_image"]["url"];
+      }
+    }
+  },
   created() {
     (this.link = LinkResolver(this.post)),
       (this.formattedDate = Intl.DateTimeFormat("en-US", {

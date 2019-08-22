@@ -57,10 +57,7 @@
             </div>
             <div class="field">
               <div class="control">
-                <button @click="trySubmitForm"
-                  ref="submitButton"
-                  class="button is-link"
-                >Submit</button>
+                <button @click="trySubmitForm" ref="submitButton" class="button is-link">Submit</button>
               </div>
             </div>
           </div>
@@ -72,6 +69,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
 import Navbar from "~/components/Navbar.vue";
@@ -102,27 +100,42 @@ export default {
   },
   methods: {
     trySubmitForm() {
-      if(this.$refs.name.value == '') {
+      if (this.$refs.name.value == "") {
         this.errors.name = true;
       } else {
         this.errors.name = false;
       }
 
-      if(this.$refs.email.value == '') {
+      if (this.$refs.email.value == "") {
         this.errors.email = true;
       } else {
         this.errors.email = false;
       }
 
-      if(this.$refs.message.value == '') {
+      if (this.$refs.message.value == "") {
         this.errors.message = true;
       } else {
         this.errors.message = false;
       }
 
-      if(!this.errors.name && !this.errors.email & !this.errors.message) {
-        alert("oops this doesn't do anything yet");
-      }
+      if (!this.errors.name && !this.errors.email && !this.errors.message) {
+        this.submitForm();
+      } 
+
+    },
+    async submitForm() {
+      await this.$axios.$post("", {
+          name: "Fred",
+          email: "test@gmail.com",
+          message: "Hi, this is a test."
+        })
+        .then(function(response) {
+          alert('success')
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     },
     addFormValidation() {
       let $this = this;

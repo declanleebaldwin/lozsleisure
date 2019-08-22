@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-image">
           <figure class="image is-4by3 lazyload">
-            <img :src="favourite.data['favourite_image']['url']" />
+            <img :src="responsiveURL" />
           </figure>
         </div>
         <div class="card-content">
@@ -20,8 +20,32 @@
 import "lazysizes";
 
 export default {
-    name: "FavouriteCard",
-    props: ["favourite"]
+  name: "FavouriteCard",
+  props: ["favourite"],
+  data() {
+    return {
+      windowWidth: 0
+    };
+  },
+  mounted() {
+    if (!process.client) return;
+    this.windowWidth = window.innerWidth;
+    window.addEventListener("resize", () => {
+      this.windowWidth = window.innerWidth;
+    });
+  },
+  computed: {
+    responsiveURL() {
+      if (
+        this.windowWidth <= 768 &&
+        this.favourite.data["favourite_image"]["mobile"]
+      ) {
+        return this.favourite.data["favourite_image"]["mobile"]["url"];
+      } else {
+        return this.favourite.data["favourite_image"]["url"];
+      }
+    }
+  }
 };
 </script>
 
