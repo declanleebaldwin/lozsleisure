@@ -76,7 +76,10 @@ export default {
   },
   head() {
     return {
-      title: "Loz's Leisure"
+      title: "Loz's Leisure",
+      script: [
+        { src: 'https://www.gstatic.com/charts/loader.js' }
+      ]
     };
   },
   mounted() {

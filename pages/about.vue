@@ -65,6 +65,14 @@
       </div>
     </section>
     <navbar></navbar>
+    <div class="modal" :class="{'is-active': showSuccessModal}">
+      <div class="modal-background" @click="showSuccessModal=false;"></div>
+      <div class="modal-content">
+        <div class="box has-text-centered has-text-weight-bold">
+          Thanks for the message, I'll get back to you soon!
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -95,7 +103,8 @@ export default {
         name: false,
         email: false,
         message: false
-      }
+      },
+      showSuccessModal: false,
     };
   },
   methods: {
@@ -120,21 +129,29 @@ export default {
 
       if (!this.errors.name && !this.errors.email && !this.errors.message) {
         this.submitForm();
-      } 
-
+      }
+    },
+    clearFormValues() {
+          this.$refs.name.value = '';
+          this.$refs.email.value = '';
+          this.$refs.message.value = '';
     },
     async submitForm() {
-      await this.$axios.$post("", {
+      let $this = this;
+      await this.$axios
+        .$post("", {
           name: "Fred",
           email: "test@gmail.com",
           message: "Hi, this is a test."
         })
         .then(function(response) {
-          alert('success')
           console.log(response);
+          $this.clearFormValues();
+          $this.showSuccessModal=true;
         })
         .catch(function(error) {
           console.log(error);
+          alert('Oh no! Something went wrong, please try again.');
         });
     },
     addFormValidation() {
