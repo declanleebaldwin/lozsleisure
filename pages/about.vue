@@ -68,9 +68,9 @@
     <div class="modal" :class="{'is-active': showSuccessModal}">
       <div class="modal-background" @click="showSuccessModal=false;"></div>
       <div class="modal-content">
-        <div class="box has-text-centered has-text-weight-bold">
-          Thanks for the message, I'll get back to you soon!
-        </div>
+        <div
+          class="box has-text-centered has-text-weight-bold"
+        >Thanks for the message, I'll get back to you soon!</div>
       </div>
     </div>
   </main>
@@ -104,7 +104,7 @@ export default {
         email: false,
         message: false
       },
-      showSuccessModal: false,
+      showSuccessModal: false
     };
   },
   methods: {
@@ -132,26 +132,25 @@ export default {
       }
     },
     clearFormValues() {
-          this.$refs.name.value = '';
-          this.$refs.email.value = '';
-          this.$refs.message.value = '';
+      this.name = "";
+      this.email = "";
+      this.message = "";
     },
     async submitForm() {
       let $this = this;
       await this.$axios
         .$post("", {
-          name: "Fred",
-          email: "test@gmail.com",
-          message: "Hi, this is a test."
+          name: $this.$refs.name.value,
+          email: $this.$refs.email.value,
+          message: $this.$refs.message.value
         })
         .then(function(response) {
-          console.log(response);
           $this.clearFormValues();
-          $this.showSuccessModal=true;
+          $this.showSuccessModal = true;
         })
         .catch(function(error) {
           console.log(error);
-          alert('Oh no! Something went wrong, please try again.');
+          alert("Oh no! Something went wrong, please try again.");
         });
     },
     addFormValidation() {
