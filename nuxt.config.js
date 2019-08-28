@@ -53,6 +53,9 @@ module.exports = {
   */
   modules: [
     ['@nuxtjs/axios', { baseURL: '/api/contact' }],
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-146611992-1'
+    }]
   ],
 
   /*
