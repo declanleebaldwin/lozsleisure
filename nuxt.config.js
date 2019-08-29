@@ -55,6 +55,10 @@ module.exports = {
     ['@nuxtjs/axios', { baseURL: '/api/contact' }],
     ['@nuxtjs/google-analytics', {
       id: 'UA-146611992-1'
+    }],
+    ['@nuxtjs/component-cache', {
+      max: 10000,
+      maxAge: 1000 * 60 * 60
     }]
   ],
 
