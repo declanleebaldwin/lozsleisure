@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="section profile-container">
-      <div class="columns">
+      <div class="columns custom-columns">
         <div class="column">
           <div class="image-container is-mobile">
             <figure class="image is-square">
@@ -149,7 +149,6 @@ export default {
           $this.showSuccessModal = true;
         })
         .catch(function(error) {
-          console.log(error);
           alert("Oh no! Something went wrong, please try again.");
         });
     },
@@ -243,6 +242,13 @@ export default {
   .image-container {
     margin: auto;
     max-width: 80%;
+  }
+}
+
+@media(max-width: 770px) { /* <== You can change this break point as per your  needs */
+  .custom-columns {
+    flex-direction: column-reverse;
+    display: flex;
   }
 }
 </style>

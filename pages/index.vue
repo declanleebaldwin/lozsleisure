@@ -138,4 +138,8 @@ export default {
 .section {
   border-bottom: 2px solid #363636;
 }
+
+#regions_div {
+  margin-bottom: 2rem;
+}
 </style>
