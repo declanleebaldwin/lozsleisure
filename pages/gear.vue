@@ -20,6 +20,7 @@ import Navbar from "~/components/Navbar.vue";
 import HeroImage from "~/components/HeroImage.vue";
 import GearSection from "~/components/GearSection.vue";
 
+
 export default {
   name: "Home",
   components: {

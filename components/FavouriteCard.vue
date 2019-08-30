@@ -1,7 +1,7 @@
 <template>
   <div class="column is-one-third">
     <a :href="favourite.data['favourite_link']['url']" target="_blank">
-      <div class="card">
+      <div class="card" data-aos="fade-up">
         <div class="card-image">
           <figure class="image is-4by3 lazyload">
             <img :src="responsiveURL" />
@@ -17,8 +17,6 @@
 </template>
 
 <script>
-import "lazysizes";
-
 export default {
   name: "FavouriteCard",
   props: ["favourite"],

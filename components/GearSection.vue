@@ -4,7 +4,7 @@
       <h1 class="title section-heading">{{ gear.data['gear_title'][0]['text'] }}</h1>
       <div class="columns">
         <div class="column">
-          <figure class="image lazyload">
+          <figure class="image lazyload" data-aos="fade-up">
             <img :src="responsiveURL" />
           </figure>
         </div>
@@ -12,7 +12,7 @@
           <div class="columns">
             <div class="column">
               <a :href="gear.data['gear_link']['url']" class="link-container" target="_blank">
-                <div class="card">
+                <div class="card" data-aos="fade-up">
                   <div class="card-content">
                     <div class="columns">
                       <div class="column">
@@ -33,7 +33,7 @@
           </div>
           <div class="columns">
             <div class="column">
-              <div class="card">
+              <div class="card" data-aos="fade-up">
                 <div class="card-content">
                   <p class="subtitle is-size-6-mobile">{{ gear.data['gear_text'][0]['text'] }}</p>
                 </div>

@@ -7,6 +7,9 @@
 
 <script>
 import FooterPrismic from "~/components/FooterPrismic.vue";
+import AOS from 'aos';
+import "lazysizes";
+
 export default {
   components: {
     FooterPrismic
@@ -15,6 +18,9 @@ export default {
     return {
       title: "Loz's Leisure"
     };
+  },
+  mounted() {
+    AOS.init();
   }
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="column is-one-third">
     <nuxt-link :to="link">
-      <div class="card">
+      <div class="card" data-aos="fade-up">
         <div class="card-image">
           <figure class="image is-4by3 lazyload">
             <img :src="responsiveURL" />
@@ -18,7 +18,6 @@
 
 <script>
 import LinkResolver from "~/plugins/link-resolver.js";
-import "lazysizes";
 
 export default {
   name: "blog-widget",
