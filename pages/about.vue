@@ -51,7 +51,7 @@
             <div class="field">
               <label class="label">Message</label>
               <div class="control">
-                <textarea ref="message" v-model="message" class="textarea" placeholder="Textarea"></textarea>
+                <textarea ref="message" v-model="message" class="textarea" placeholder="Write your message here."></textarea>
               </div>
               <p v-show="errors.message" class="help is-danger">Please enter your message</p>
             </div>
